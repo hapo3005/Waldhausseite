@@ -1,78 +1,70 @@
-const header = document.querySelector('[data-header]');
-const nav = document.querySelector('[data-nav]');
-const menuToggle = document.querySelector('[data-menu-toggle]');
-const reveals = document.querySelectorAll('.reveal');
-const flight = document.querySelector('[data-flight]');
-const replay = document.querySelector('[data-replay]');
-const flightTime = document.querySelector('[data-flight-time]');
+const header=document.querySelector('[data-header]');
+const hero=document.querySelector('[data-hero]');
+const video=document.querySelector('[data-flight]');
+const locationFrame=document.querySelector('[data-location-frame]');
+const replayButtons=document.querySelectorAll('[data-replay]');
+const skipButton=document.querySelector('[data-skip]');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 34);
-onScroll();
-addEventListener('scroll', onScroll, { passive: true });
+const onScroll=()=>header?.classList.toggle('scrolled',scrollY>34);
+onScroll();addEventListener('scroll',onScroll,{passive:true});
 
-menuToggle?.addEventListener('click', () => {
-  const open = nav?.classList.toggle('open') ?? false;
-  menuToggle.setAttribute('aria-expanded', String(open));
+let arrivalTimer;
+let videoUrl='';
+function showArrival(){clearTimeout(arrivalTimer);hero?.classList.add('arrived')}
+function hideArrival(){if(!reduced)hero?.classList.remove('arrived')}
+function scheduleArrival(){
+  clearTimeout(arrivalTimer);
+  if(reduced){showArrival();return;}
+  if(!video||!Number.isFinite(video.duration)){arrivalTimer=setTimeout(showArrival,6400);return;}
+  arrivalTimer=setTimeout(showArrival,Math.max(0,(video.duration-.2)*1000));
+}
+
+function b64ToBytes(value){
+  const raw=atob(value.trim());
+  const bytes=new Uint8Array(raw.length);
+  for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+  return bytes;
+}
+
+async function loadEarthVideo(){
+  const files=Array.from({length:6},(_,i)=>`assets/earth-video/part-${String(i).padStart(2,'0')}.b64`);
+  const parts=[];
+  for(const file of files){
+    const response=await fetch(file,{cache:'force-cache'});
+    if(!response.ok)throw new Error(`Earth video payload missing: ${file}`);
+    parts.push(b64ToBytes(await response.text()));
+  }
+  const blob=new Blob(parts,{type:'video/mp4'});
+  videoUrl=URL.createObjectURL(blob);
+  [video,locationFrame].filter(Boolean).forEach(el=>{el.src=videoUrl;el.load();});
+
+  if(locationFrame){
+    locationFrame.addEventListener('loadedmetadata',()=>{
+      if(Number.isFinite(locationFrame.duration)) locationFrame.currentTime=Math.max(0,locationFrame.duration-.04);
+    },{once:true});
+    locationFrame.addEventListener('seeked',()=>locationFrame.pause());
+  }
+
+  if(!video){showArrival();return;}
+  video.addEventListener('loadedmetadata',scheduleArrival,{once:true});
+  video.addEventListener('ended',showArrival);
+  if(reduced){video.pause();showArrival();return;}
+  await video.play().catch(showArrival);
+}
+
+skipButton?.addEventListener('click',()=>{
+  if(video&&Number.isFinite(video.duration)){video.currentTime=Math.max(0,video.duration-.04);video.pause();}
+  showArrival();
 });
-nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menuToggle?.setAttribute('aria-expanded', 'false');
+
+replayButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  if(!video||!videoUrl)return;
+  hideArrival();
+  video.currentTime=0;
+  video.play().catch(showArrival);
+  scheduleArrival();
+  document.querySelector('#top')?.scrollIntoView({behavior:reduced?'auto':'smooth'});
 }));
 
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => io.observe(el));
-} else {
-  reveals.forEach(el => el.classList.add('is-visible'));
-}
-
-let flightTimer;
-let flightStartedAt = 0;
-const FLIGHT_MS = 14000;
-const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-function formatFlightTime(ms) {
-  const seconds = Math.min(14, Math.max(0, Math.floor(ms / 1000)));
-  return `00:${String(seconds).padStart(2, '0')} / 00:14`;
-}
-
-function runFlight() {
-  if (!flight || reducedMotion()) return;
-  clearInterval(flightTimer);
-  flight.classList.remove('is-playing');
-  void flight.offsetWidth;
-  flight.classList.add('is-playing');
-  flightStartedAt = performance.now();
-  if (flightTime) flightTime.textContent = '00:00 / 00:14';
-  flightTimer = setInterval(() => {
-    const elapsed = performance.now() - flightStartedAt;
-    if (flightTime) flightTime.textContent = formatFlightTime(elapsed);
-    if (elapsed >= FLIGHT_MS) {
-      clearInterval(flightTimer);
-      if (flightTime) flightTime.textContent = '00:14 / 00:14';
-    }
-  }, 250);
-}
-
-replay?.addEventListener('click', runFlight);
-
-if (flight && 'IntersectionObserver' in window) {
-  const flightObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        runFlight();
-        flightObserver.disconnect();
-      }
-    });
-  }, { threshold: 0.35 });
-  flightObserver.observe(flight);
-} else if (flight) {
-  runFlight();
-}
+loadEarthVideo().catch(error=>{console.error(error);showArrival();});
