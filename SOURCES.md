@@ -1,35 +1,23 @@
-# Waldhaus Kerschenbach — Quellen & Bildlizenzen
+# Quellen & Hinweise – Waldhausseite V2
 
-Stand: 21.08.2026
+Stand: 21. August 2026
 
-## Orts- und Routendaten
+## Ortsdaten
 
-### Ortsgemeinde Kerschenbach
-Quelle: „Ausführliches Ortsportrait“ der Ortsgemeinde Kerschenbach.
-Verwendete Angaben: Höhenlage ca. 550 m; im Feriengebiet „Kyllerberg“ zusätzlich 80 Ferienhäuser.
-Quelle: https://kerschenbach.de/der-ort/ausfuhrliches-ortsportrait/
+- Gemeinde Kerschenbach – Ortsportrait: https://kerschenbach.de/der-ort/ausfuhrliches-ortsportrait/
+  - verwendet für die ungefähre Höhenlage von Kerschenbach und die Größenordnung des Ferienhausgebiets am Killerberg.
+- Eifel Tourismus – Kerschenbach KB3 / Arnika-Route: https://www.eifel.info/touren/kerschenbach-kb3
+  - verwendet für die Streckenlänge von rund 7 km und den Bezug Richtung Kronenburg / Kronenburger See.
+- Kronenburger See: https://www.kronenburger-see.de/Home
+- Eifel Tourismus – Kronenburg: https://www.eifel.info/a-kronenburg
 
-### Eifel Tourismus — Arnika-Route KB3
-Quelle: „Kerschenbach Wanderweg KB 3 - Arnika-Route“.
-Verwendete Angaben: Rundweg 7,0 km; Strecke von Kerschenbach Richtung Kronenburg; Ausblicke auf Kronenburger See und historischen Burgort.
-Quelle: https://www.eifel.info/touren/kerschenbach-kb3
+## Projektinterne Bildquellen
 
-## Externe Fotos
+- `assets/logo.webp` – bestehendes Waldhaus-Logo aus dem Waldhaus-Projekt.
+- `assets/feriendorf.webp` / `assets/shot-map.webp` – aus dem authentisch aufgebauten Waldhaus-Feriendorfplan abgeleitet. Die Darstellung ist stilisiert und keine amtliche Vermessung.
+- `assets/shot-hills.webp`, `assets/shot-inside.webp` – Ausschnitte aus dem für das Waldhaus-Projekt zuvor ausgewählten KI-Visual. Sie sind keine dokumentarischen Fotos des Objekts.
+- `assets/virtual-flight-640.mp4` – eigens für die Website erzeugte virtuelle Sequenz aus dem Feriendorfplan und den Projektvisuals. Kein realer Drohnenflug.
 
-### Kronenburger See, Luftbild-0047.jpg
-Urheber: Raimond Spekking & Elke Wetzig.
-Lizenz: CC BY-SA 4.0.
-Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Kronenburger_See,_Luftbild-0047.jpg
-Attribution: © Raimond Spekking & Elke Wetzig / CC BY-SA 4.0 (via Wikimedia Commons)
+## Inhaltsregel
 
-### Panoramablick von der Burgruine Kronenburg 6790-92.jpg
-Urheber: Raimond Spekking.
-Lizenz: CC BY-SA 4.0.
-Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Panoramablick_von_der_Burgruine_Kronenburg_6790-92.jpg
-Attribution: © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons)
-
-## Waldhaus-eigene Visuals
-
-Logo, Lageplan und KI-Waldhausmotive stammen aus dem Waldhaus-Projektmaterial. Die KI-Waldhausdarstellungen werden auf der Website ausdrücklich als Visualisierung und nicht als dokumentarische Fotografie gekennzeichnet.
-
-Der Lageplan ist eine stilisierte, nicht amtliche Übersicht. Er darf nicht als Vermessungs-, Kataster- oder Navigationskarte verstanden werden.
+Unbestätigte Ausstattungsmerkmale, Quadratmeter, Preise, Verfügbarkeit und Buchungsdaten werden nicht erfunden. Sie können ergänzt werden, sobald belastbare Objektdaten vorliegen.
