@@ -1,12 +1,14 @@
 # Waldhausseite V2
 
-Neu konzipierter Premium-Onepager für das Waldhaus Kerschenbach.
+Premium-Onepager für das Waldhaus Kerschenbach.
 
-- echte Waldhaus-Farb- und Logosprache
-- virtueller 15-Sekunden-Anflug als echtes MP4 statt CSS-Zoom
+## Highlights
+- echter Google-Earth-Anflug auf den exakten Waldhaus-Standort
+- Waldhaus-Farb- und Logosprache
 - authentischer Feriendorfplan als Identitätsanker
-- responsive / mobile Navigation
+- responsive Darstellung für Desktop und Mobile
 - Reduced-Motion-Fallback
-- keine erfundenen Preise, Ausstattungen oder Buchungsdaten
+- verifizierte Orts- und Routendaten
+- Quellen- und Attribution-Hinweise in `SOURCES.md`
 
-V2 bleibt auf `feat/waldhaus-v2`, bis die visuelle Abnahme erfolgt ist.
+Der veröffentlichte Stand liegt auf `main` und wird über GitHub Pages bereitgestellt.
