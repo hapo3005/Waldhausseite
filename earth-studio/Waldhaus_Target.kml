@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Waldhaus Kerschenbach – Zielpunkt</name>
+    <Placemark>
+      <name>Waldhaus Ziel</name>
+      <description>50°20'55.2&quot;N 6°30'49.8&quot;E</description>
+      <Point><coordinates>6.513833333,50.348666667,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>
