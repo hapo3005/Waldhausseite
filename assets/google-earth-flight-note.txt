@@ -1,0 +1,1 @@
+Finaler Google-Earth-Studio-Render liegt lokal vor und wurde für Web auf 1280px / H.264 / faststart optimiert. Zielhaus: 50.3486667, 6.5138333. Der Video-Blob wird separat eingebunden.
