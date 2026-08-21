@@ -2,12 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0d2018">
-  <meta name="description" content="Waldhaus Kerschenbach – Natur, Ruhe und Eifel. Ein besonderer Rückzugsort im Feriendorf am Killerberg.">
-  <meta property="og:title" content="Waldhaus Kerschenbach">
-  <meta property="og:description" content="Ein Haus. Viel Wald. Und endlich Ruhe.">
-  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b2118">
+  <meta name="description" content="Waldhaus Kerschenbach – Rückzug, Natur und Eifel im Feriendorf am Killerberg.">
   <title>Waldhaus Kerschenbach — Natur & Entspannung</title>
   <link rel="icon" href="assets/logo.webp">
   <link rel="stylesheet" href="styles.css">
@@ -15,158 +12,22 @@
 </head>
 <body>
   <a class="skip" href="#main">Zum Inhalt springen</a>
-
-  <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="Waldhaus Startseite">
-      <span class="brand-symbol">⌂</span><span>Waldhaus</span>
-    </a>
-    <button class="menu-button" type="button" data-menu aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span><b class="sr-only">Menü</b></button>
-    <nav id="nav" class="nav" data-nav aria-label="Hauptnavigation">
-      <a href="#haus">Das Haus</a>
-      <a href="#feriendorf">Feriendorf</a>
-      <a href="#eifel">Eifel</a>
-      <button class="nav-flight" type="button" data-replay>Anflug ansehen</button>
-    </nav>
+  <header class="topbar" data-header>
+    <a class="brand" href="#top" aria-label="Waldhaus Startseite"><span class="brand-mark">W</span><span class="brand-copy"><b>Waldhaus</b><small>Kerschenbach · Eifel</small></span></a>
+    <nav class="nav" aria-label="Hauptnavigation"><a href="#haus">Das Haus</a><a href="#lage">Lage</a><a href="#eifel">Eifel</a><button class="replay" type="button" data-replay>↻ Anflug</button></nav>
   </header>
-
   <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-media">
-        <video data-flight autoplay muted playsinline loop preload="metadata" poster="assets/shot-map.webp">
-          <source src="assets/virtual-flight-640.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="film-grain" aria-hidden="true"></div>
-      </div>
-
-      <div class="hero-copy reveal">
-        <p class="kicker"><span></span>Kerschenbach · Eifel</p>
-        <h1>Ein Haus.<br>Viel Wald.<br><em>Und endlich Ruhe.</em></h1>
-        <p class="lead">Mitten im Feriendorf am Killerberg. Ein Ort für langsame Morgen, lange Spaziergänge und Abende, an denen nichts mehr auf der Liste steht.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#haus">Waldhaus entdecken <span>↓</span></a>
-          <button class="button button-quiet" type="button" data-replay>Anflug von vorn ↻</button>
-        </div>
-      </div>
-
-      <div class="hero-logo reveal" aria-label="Waldhaus Natur & Entspannung">
-        <img src="assets/logo.webp" alt="Waldhaus – Natur & Entspannung">
-      </div>
-
-      <div class="visual-note">Virtuelle Visualisierung</div>
-      <a class="scroll" href="#haus" aria-label="Weiter"><span></span>ENTDECKEN</a>
+    <section class="hero" id="top" data-hero>
+      <div class="earth-stage" aria-label="Google-Earth-Anflug auf das Waldhaus in Kerschenbach"><div class="earth-blur" aria-hidden="true"></div><video data-flight autoplay muted playsinline preload="auto" poster="assets/map.webp"><source src="assets/google-earth-waldhaus.mp4" type="video/mp4"></video></div>
+      <div class="hero-shade"></div>
+      <div class="arrival" data-arrival><p class="eyebrow"><span></span>50°20'55.2″ N · 6°30'49.8″ E</p><h1>Ein Haus.<br>Viel Wald.<br><em>Und endlich Ruhe.</em></h1><p class="hero-lead">Im Feriendorf Kerschenbach beginnt die Eifel direkt vor der Tür. Für Tage, die nicht durchgetaktet sein müssen.</p><div class="hero-actions"><a class="btn btn-gold" href="#haus">Waldhaus entdecken <span>↓</span></a><button class="btn btn-ghost" type="button" data-replay>Anflug wiederholen ↻</button></div></div>
+      <div class="hero-side" data-arrival><img src="assets/logo.webp" alt="Waldhaus – Natur & Entspannung"></div><div class="scroll-hint">SCROLL <span></span></div>
     </section>
-
-    <section class="intro section" id="haus">
-      <div class="wrap intro-grid">
-        <div class="intro-title reveal">
-          <p class="kicker dark"><span></span>Das Waldhaus</p>
-          <h2>Manchmal ist <em>weniger</em><br>genau richtig.</h2>
-        </div>
-        <div class="intro-text reveal">
-          <p class="big-copy">Kein Programm. Kein Lärm. Kein Müssen.</p>
-          <p>Das Waldhaus ist als Rückzugsort gedacht: morgens die Tür öffnen, Waldluft reinlassen und den Tag erst dann planen, wenn überhaupt. Die Eifel beginnt hier nicht hinter der nächsten Ausfahrt, sondern direkt vor der Tür.</p>
-        </div>
-      </div>
-
-      <div class="wrap house-visual reveal">
-        <img src="assets/shot-inside.webp" alt="Warmer Blick in das Waldhaus mit Holz, Sesseln und Kamin" loading="lazy">
-        <div class="house-caption">
-          <span>Drinnen</span>
-          <strong>Warm. Still. Nah am Wald.</strong>
-        </div>
-      </div>
-
-      <div class="wrap values reveal">
-        <article><span>01</span><h3>Rückzug</h3><p>Ein Ort, der nicht um Aufmerksamkeit kämpft.</p></article>
-        <article><span>02</span><h3>Natur</h3><p>Wald, Wege und Eifelluft direkt rund ums Feriendorf.</p></article>
-        <article><span>03</span><h3>Zeit</h3><p>Für Frühstück ohne Uhr und Abende ohne Termine.</p></article>
-      </div>
-    </section>
-
-    <section class="village section" id="feriendorf">
-      <div class="wrap village-head reveal">
-        <p class="kicker"><span></span>Feriendorf Kerschenbach</p>
-        <h2>Ein kleiner Ort<br><em>mitten im Grünen.</em></h2>
-        <p>Das Feriengebiet am Killerberg gehört zu Kerschenbach und ist geprägt von kleinen Häusern, geschwungenen Wegen und viel Grün dazwischen.</p>
-      </div>
-
-      <div class="map-stage reveal">
-        <img src="assets/feriendorf.webp" alt="Stilisierter Lageplan des Feriendorfs Kerschenbach mit Ferienhäusern und Wegen" loading="lazy">
-        <div class="map-glow" aria-hidden="true"></div>
-      </div>
-
-      <div class="wrap facts reveal">
-        <article><strong>≈ 550 m</strong><span>über dem Meer</span></article>
-        <article><strong>≈ 80</strong><span>Ferienhäuser am Killerberg</span></article>
-        <article><strong>7 km</strong><span>Arnika-Route ab Kerschenbach</span></article>
-      </div>
-    </section>
-
-    <section class="eifel section" id="eifel">
-      <div class="wrap eifel-head reveal">
-        <div>
-          <p class="kicker dark"><span></span>Draußen beginnt die Eifel</p>
-          <h2>Tür auf.<br><em>Tag an.</em></h2>
-        </div>
-        <p>Kein Reiseführer mit hundert Punkten. Drei Dinge reichen für den Anfang: loslaufen, Wasser sehen, durch alte Gassen streifen.</p>
-      </div>
-
-      <div class="wrap experience-grid">
-        <article class="experience experience-walk reveal">
-          <div class="experience-no">01</div>
-          <div class="route-line" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="experience-copy"><span>Direkt ab Kerschenbach</span><h3>Arnika-Route</h3><p>Rund 7 Kilometer Eifel: Wald, offene Landschaft und der Weg Richtung Kronenburg.</p></div>
-        </article>
-
-        <article class="experience experience-view reveal">
-          <img src="assets/shot-hills.webp" alt="Grüne bewaldete Hügellandschaft" loading="lazy">
-          <div class="experience-shade"></div>
-          <div class="experience-no">02</div>
-          <div class="experience-copy light"><span>Weite & Wald</span><h3>Einfach raus</h3><p>Der beste Plan für manche Tage: Schuhe an und schauen, wo der Weg hinführt.</p></div>
-        </article>
-
-        <article class="experience experience-map reveal">
-          <div class="mini-map"><img src="assets/feriendorf.webp" alt="" loading="lazy"></div>
-          <div class="experience-no">03</div>
-          <div class="experience-copy"><span>Rund um Kerschenbach</span><h3>Kronenburg & See</h3><p>Historischer Burgort und Kronenburger See liegen als naheliegende Ausflugsziele in der Umgebung.</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="day section">
-      <div class="wrap day-grid">
-        <div class="day-title reveal">
-          <p class="kicker"><span></span>Ein Tag im Waldhaus</p>
-          <h2>Kein Stundenplan.<br><em>Nur eine Idee.</em></h2>
-        </div>
-        <div class="timeline reveal">
-          <article><time>08:17</time><div><h3>Langsam anfangen.</h3><p>Kaffee, offene Tür, Waldluft. Mehr muss der Morgen nicht können.</p></div></article>
-          <article><time>12:40</time><div><h3>Einfach los.</h3><p>Eine Runde durch den Wald oder die Arnika-Route – ohne Zeitdruck.</p></div></article>
-          <article><time>17:30</time><div><h3>Noch nicht zurück?</h3><p>Kronenburg, ein Abstecher zum See oder einfach noch eine Bank mit Aussicht.</p></div></article>
-          <article><time>21:06</time><div><h3>Tür zu. Ruhe an.</h3><p>Zurück ins Warme. Der Rest kann bis morgen warten.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="closing section">
-      <div class="wrap closing-card reveal">
-        <div class="closing-image"><img src="assets/logo.webp" alt="Waldhaus – Natur & Entspannung" loading="lazy"></div>
-        <div class="closing-copy">
-          <p class="kicker dark"><span></span>Waldhaus Kerschenbach</p>
-          <h2>Vielleicht brauchst du<br><em>genau das.</em></h2>
-          <p>Ein paar Tage Wald. Ein Haus im Grünen. Und genug Abstand, damit sich Alltag wieder wie Alltag anfühlt.</p>
-          <a class="button button-dark" href="#top">Noch einmal anfliegen ↑</a>
-        </div>
-      </div>
-    </section>
+    <section class="story" id="haus"><div class="wrap story-grid"><div><p class="eyebrow dark"><span></span>Das Waldhaus</p><h2>Hier muss nichts<br><em>passieren.</em></h2></div><div class="story-copy"><p class="big">Und genau das ist der Luxus.</p><p>Kein Hotelkorridor, kein Programm, kein „das müsste man noch sehen“. Das Waldhaus ist ein Rückzugsort im Grünen: Tür auf, Waldluft rein, Tempo raus.</p><div class="microfacts"><div><b>≈ 550 m</b><span>Höhenlage Kerschenbach</span></div><div><b>≈ 80</b><span>Ferienhäuser am Killerberg</span></div><div><b>7 km</b><span>Arnika-Route ab Ort</span></div></div></div></div></section>
+    <section class="location" id="lage"><div class="wrap location-head"><p class="eyebrow"><span></span>Feriendorf Kerschenbach</p><div class="split-title"><h2>Nicht irgendein Punkt.<br><em>Genau hier.</em></h2><p>Der Satellitenflug endet dort, wo der Lageplan übernimmt. So bleibt die Orientierung real – und das Feriendorf wiedererkennbar.</p></div></div><div class="map-shell"><img src="assets/map.webp" alt="Authentischer stilisierter Lageplan des Feriendorfs Kerschenbach"><div class="map-vignette"></div><div class="map-caption"><span>Feriendorf am Killerberg</span><b>Kerschenbach · Eifel</b></div></div></section>
+    <section class="rhythm" id="eifel"><div class="wrap rhythm-grid"><div class="rhythm-intro"><p class="eyebrow dark"><span></span>Ein Tag im Waldhaus</p><h2>Kein Plan.<br><em>Nur Möglichkeiten.</em></h2><p>Die Eifel funktioniert am besten ohne Checkliste. Ein paar Ideen reichen.</p></div><div class="timeline"><article><time>08:17</time><div><h3>Langsam anfangen.</h3><p>Kaffee. Ruhe. Vielleicht noch gar nichts entscheiden.</p></div></article><article><time>11:40</time><div><h3>Einfach loslaufen.</h3><p>Waldwege und die Arnika-Route beginnen rund um Kerschenbach.</p></div></article><article><time>16:20</time><div><h3>Noch ein Stück Eifel.</h3><p>Kronenburg, Kronenburger See oder einfach die nächste Bank mit Aussicht.</p></div></article><article><time>21:06</time><div><h3>Tür zu. Ruhe an.</h3><p>Zurück ins Waldhaus. Morgen ist auch noch ein Tag.</p></div></article></div></div></section>
+    <section class="closing"><div class="closing-inner wrap"><div class="closing-logo"><img src="assets/logo.webp" alt="Waldhaus Logo"></div><div><p class="eyebrow dark"><span></span>Waldhaus Kerschenbach</p><h2>Vielleicht ist genau das<br><em>gerade genug.</em></h2><p class="closing-text">Ein Haus im Grünen, ein paar Tage Abstand und genug Ruhe, damit der Kopf wieder Platz bekommt.</p><a class="btn btn-dark" href="#top">Noch einmal anfliegen ↑</a></div></div></section>
   </main>
-
-  <footer>
-    <div class="wrap footer-grid">
-      <div><b>WALDHAUS</b><span>Natur & Entspannung · Kerschenbach</span></div>
-      <div><a href="SOURCES.md">Quellen & Hinweise</a><span>Feriendorf am Killerberg · Eifel</span></div>
-    </div>
-  </footer>
+  <footer><div class="wrap footer-inner"><div><b>WALDHAUS</b><span>Natur & Entspannung · Kerschenbach</span></div><div><span>Google-Earth-Bildmaterial im Anflug mit eingeblendeter Quellenangabe</span></div></div></footer>
 </body>
 </html>
